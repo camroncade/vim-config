@@ -39,3 +39,15 @@ augroup phpSyntaxOverride
 	autocmd!
 	autocmd FileType php call PhpSyntaxOverride()
 augroup END
+
+set nocompatible               " be iMproved
+filetype off                   " required!
+
+ set rtp+=~/.vim/bundle/vundle/
+ call vundle#rc()
+
+ " let Vundle manaage vundle
+ " required!
+ 
+ Bundle 'gmarik/vundle'
+ filetype plugin indent on      " required!

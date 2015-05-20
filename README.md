@@ -1,5 +1,7 @@
 ### Setting up on a new environment
 
+Includes my preferred configuration and theme, syntax support for blade, and the NERDTREES navbar.
+
 1) Clone dotvim.
 ```sh
 $ git clone https://github.com/camroncade/vim-config.git

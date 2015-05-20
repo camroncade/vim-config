@@ -51,3 +51,5 @@ filetype off                   " required!
  
  Bundle 'gmarik/vundle'
  filetype plugin indent on      " required!
+
+ Bundle 'scrooloose/nerdtree'

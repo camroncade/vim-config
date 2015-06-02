@@ -31,25 +31,43 @@ imap jj <esc>
 nmap <C-b> :NERDTreeToggle<cr>
 
 function! PhpSyntaxOverride()
-	hi! def link phpDocTags  phpDefine
-	hi! def link phpDocParam phpType
+    hi! def link phpDocTags  phpDefine
+    hi! def link phpDocParam phpType
 endfunction
 
 augroup phpSyntaxOverride
-	autocmd!
-	autocmd FileType php call PhpSyntaxOverride()
+    autocmd!
+    autocmd FileType php call PhpSyntaxOverride()
 augroup END
 
 set nocompatible               " be iMproved
 filetype off                   " required!
 
- set rtp+=~/.vim/bundle/vundle/
- call vundle#rc()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
 
- " let Vundle manaage vundle
- " required!
- 
- Bundle 'gmarik/vundle'
- filetype plugin indent on      " required!
+" let Vundle manaage vundle
+" required!
 
- Bundle 'scrooloose/nerdtree'
+Bundle 'gmarik/vundle'
+filetype plugin indent on      " required!
+
+Bundle 'scrooloose/nerdtree'
+
+function! RunPHPUnitTest(filter)
+    cd %:p:h
+    if a:filter
+        normal! T yw
+        let result = system("phpunit --filter " . @" . " " . bufname("%"))
+    else
+        let result = system("phpunit " . bufname("%"))
+    endif
+    split __PHPUnit_Result__
+    normal! ggdG
+    setlocal buftype=nofile
+    call append(0, split(result, '\v\n'))
+    cd -
+endfunction
+
+nnoremap <leader>u :call RunPHPUnitTest(0)<cr>
+nnoremap <leader>f :call RunPHPUnitTest(1)<cr>

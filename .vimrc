@@ -7,7 +7,6 @@ set expandtab
 
 set t_Co=256
 colorscheme xoria256
-set guifont=menlo\ for\ powerline:h16
 
 set linespace=15
 
@@ -53,23 +52,4 @@ Bundle 'gmarik/vundle'
 filetype plugin indent on      " required!
 
 Bundle 'scrooloose/nerdtree'
-
-function! RunPHPUnitTest(filter)
-    cd %:p:h
-    if a:filter
-        normal! T yw
-        let result = system("phpunit --filter " . @" . " " . bufname("%"))
-    else
-        let result = system("phpunit " . bufname("%"))
-    endif
-    split __PHPUnit_Result__
-    normal! ggdG
-    setlocal buftype=nofile
-    call append(0, split(result, '\v\n'))
-    cd -
-endfunction
-
-nnoremap <leader>u :call RunPHPUnitTest(0)<cr>
-nnoremap <leader>f :call RunPHPUnitTest(1)<cr>
-
-Bundle 'Raimondi/delimitMate'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}

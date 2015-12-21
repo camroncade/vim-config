@@ -1,8 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/camroncmatschek/Sites/octobot/app/Psychiatrist'
 let g:netrw_dirhist_2='/Users/camroncmatschek/.vim'
 let g:netrw_dirhist_3='/Users/camroncmatschek/.ssh'
 let g:netrw_dirhist_4='/Users/camroncmatschek/Sites/nameparser'
 let g:netrw_dirhist_5='/Users/camroncmatschek/Sites/rails'
 let g:netrw_dirhist_6='/Users/camroncmatschek/Sites/Homestead'
+let g:netrw_dirhist_7='/Users/camroncmatschek/Sites/telepsychiatry_design'
+let g:netrw_dirhist_8='/Users/camroncmatschek/Sites/app'

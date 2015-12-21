@@ -29,6 +29,10 @@ imap jj <esc>
 
 nmap <C-b> :NERDTreeToggle<cr>
 
+" super quick phpunit testing
+nmap ,t :!clear && phpunit<cr>
+nmap ,m :!clear && phpunit %<cr>
+
 function! PhpSyntaxOverride()
     hi! def link phpDocTags  phpDefine
     hi! def link phpDocParam phpType
@@ -53,3 +57,23 @@ filetype plugin indent on      " required!
 
 Bundle 'scrooloose/nerdtree'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'Townk/vim-autoclose'
+Bundle 'closetag.vim'
+Bundle 'geoffharcourt/vim-matchit'
+Bundle 'ctrlpvim/ctrlp.vim'
+
+set backspace=2 " make backspace work like most other apps "
+
+" Track the engine
+Plugin 'SirVer/ultisnips'
+
+" Snippets are separate from the engine, add this if you want them:
+Plugin 'honza/vim-snippets'
+
+" Trigger configuration.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want UltiliSnips Edit to split your window
+let g:UltiSnipsEditSplit="vertical"

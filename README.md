@@ -24,6 +24,12 @@ $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 5) Installing the packages
 open vim and execute `:BundleInstall`
 
+Note: This inclues UltiSnips, which requires that vim is compiled with py3. Use homebrew to install macvim with python 3:
+
+```
+$ brew install macvim --with-pythin --with-override-system-vim
+```
+
 License
 ----
 

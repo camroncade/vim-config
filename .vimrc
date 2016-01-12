@@ -30,8 +30,8 @@ imap jj <esc>
 nmap <C-b> :NERDTreeToggle<cr>
 
 " super quick phpunit testing
-nmap ,t :!clear && phpunit<cr>
-nmap ,m :!clear && phpunit %<cr>
+nmap ,t :! phpunit<cr>
+nmap ,m :!phpunit %<cr>
 
 function! PhpSyntaxOverride()
     hi! def link phpDocTags  phpDefine
@@ -72,8 +72,10 @@ Plugin 'honza/vim-snippets'
 
 " Trigger configuration.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 " If you want UltiliSnips Edit to split your window
 let g:UltiSnipsEditSplit="vertical"
+
+autocmd BufNewFile,BufRead *.blade.php setlocal ft=html

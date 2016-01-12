@@ -1,7 +1,28 @@
-snippet tc "PHPUnit test method" b
+snippet test "PHPUnit test method" b
 /** @test */
 function $1()
 {
 
+}
+endsnippet
+
+snippet faker "Define method for Laravel Faker class" b
+$factory->define($1::class, function (Faker\Generator $faker) {
+	return [
+		$2	
+	];
+});
+endsnippet
+
+snippet testcase "Laravel Testcase class" b
+<?php
+
+use Illuminate\Foundation\Testing\WithoutMiddleware;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
+
+class $1 extends TestCase
+{
+	test
 }
 endsnippet
